@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cadastro</title>
+    <link rel="icon" type="image/png" href="foto/logopet.png" />
+    <style>
+      header {
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        justify-content: space-between;
+        padding: 20px;
+        margin-bottom: 50px;
+        align-items: center;
+      }
+      header img {
+        height: 110px;
+      }
+      nav a {
+        color: #37474f;
+        font-weight: bold;
+        font-size: 38px;
+        text-decoration: none;
+      }
+      nav a:hover {
+        color: #0d47a1;
+        text-decoration: underline;
+        text-decoration-color: rgb(0, 140, 255);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 5px;
+      }
+      nav {
+        display: flex;
+        gap: 30px;
+      }
+      body {
+        display: flex;
+        font-family: Arial, sans-serif;
+        background-color: #2196f3;
+        display: flex;
+        flex-direction: column;
+
+        margin: 0;
+      }
+      main {
+        background-color: #2196f3;
+        height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        background-color: #4a97ee;
+        padding: 25px;
+        border-radius: 28px;
+        box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.35);
+        width: 100%;
+        max-width: 800px;
+      }
+      h1 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif lightblue;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .nomepet {
+        margin-bottom: 15px;
+      }
+      .label {
+        display: block;
+        margin-bottom: 6px;
+        gap: 10px;
+        color: bisque;
+        font-size: 10px;
+      }
+      #forma {
+        display: flex;
+        gap: 30px;
+      }
+      .perguntapet,
+      .pergunta-humano {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+      }
+      .label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: bisque;
+      }
+      input[type="text"],
+      select {
+        width: 100%;
+        height: 38px;
+        padding: 8px;
+        border: 1px solid white;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+      .balaogrande {
+        padding: 8px;
+        margin-top: 15px;
+      }
+      textarea {
+        width: 100%;
+        height: 150px;
+        min-height: 150px;
+        resize: none;
+        box-sizing: border-box;
+        border-radius: 10px;
+        border-color: black;
+      }
+
+      /* botao canc e cadas*/
+      button {
+        border: none;
+        border-radius: 25px;
+        padding: 13px 25px;
+        font-size: 25px;
+        background-color: #2179dd;
+        color: white;
+        cursor: pointer;
+
+        overflow: visible;
+      }
+
+      #botao {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+      }
+
+      #botao a {
+        color: white;
+        text-decoration: none;
+
+        position: relative;
+        display: inline-block;
+      }
+
+      #botao button:nth-child(2) a::after {
+        content: "";
+        position: absolute;
+        border-radius: 30px;
+
+        top: -14px;
+        bottom: -14px;
+        left: -25px;
+        right: -25px;
+
+        cursor: pointer;
+      }
+
+      #container_cadastrar {
+        display: none;
+        font-size: 28px;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+      }
+#fechar_cadastrar{
+        float: right;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      #cadastro_concluido {
+        border-radius: 20px;
+        padding: 5px 25px;
+        height:fit-content;
+        width: 700px;
+        background-color: white;
+      }
+    </style>
+  </head>
+
+  <script src="script_cadastro.js"></script>
+  <header>
+    <h1><img src="foto/logopet.png" alt="Pet Feliz" /></h1>
+
+    <nav>
+      <a href="pg_inicio.html">Início</a>
+      <a href="cadastro.html">cadastrar animal</a>
+      <a href="adocao_login.html">login</a>
+    </nav>
+  </header>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Cadastre o seu PET</h1>
+        <div id="forma">
+          <div class="perguntapet">
+            <h2>Perguntas sobre o pet</h2>
+            <div class="nomepet">
+              <label for="nomepet">Nome do Pet</label>
+              <input type="text" />
+            </div>
+            <div class="nomepet">
+              <label for="idadepet">Idade Do Pet</label>
+              <section>
+                <select
+                  style="
+                    font-size: 15px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                  "
+                >
+                  <option>Filhote 0-1 Anos</option>
+                  <option>Jovem 1-2 Anos</option>
+                  <option>Adulto 2-7 Anos</option>
+                  <option>Idoso 7-10+ Anos</option>
+                </select>
+              </section>
+            </div>
+            <div class="nomepet">
+              <label for="Raça"> pet</label>
+              <section>
+                <select
+                  style="
+                    font-size: 15px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                  "
+                >
+                  <option>Cachorro</option>
+                  <option>Gato</option>
+                </select>
+              </section>
+            </div>
+            <div class="nomepet">
+              <label for="nomepet"
+                >O pet possui necessidades especiais?(Quais?)</label
+              >
+              <input type="text" />
+            </div>
+            <div class="nomepet">
+              <label for="nomepet">Raça do pet</label>
+              <input type="text" />
+            </div>
+            <div class="balaogrande">
+              <label for="Questões a se prestar atenção">Observações</label>
+              <textarea></textarea>
+            </div>
+          </div>
+          <div class="pergunta-humano">
+            <h2>Perguntas sobre o dono</h2>
+            <div class="nomepet">
+              <label for="nomedono">Nome do dono</label>
+              <input type="text" />
+            </div>
+            <div class="nomepet">
+              <label for="endereço">País</label>
+              <input type="text" />
+            </div>
+            <div class="nomepet">
+              <label for="Estado">Estado</label>
+
+              <input type="text" />
+            </div>
+            <div class="nomepet">
+              <label for="Estado">Cidade</label>
+
+              <input type="text" />
+            </div>
+            <div class="nomepet">
+              <label for="Estado">Bairro e Rua</label>
+
+              <input type="text" />
+            </div>
+            <div class="balaogrande">
+              <label for="Questoes_atencao"
+                >Motivo de colocar para adoção
+              </label>
+              <textarea></textarea>
+            </div>
+          </div>
+        </div>
+
+        <section id="botao">
+          <button onclick="cadastrar()">CADASTRAR</button>
+          <button style="background-color: red">
+            <a href="pg_inicio.html">CANCELAR</a>
+          </button>
+        </section>
+      </div>
+      <div id="container_cadastrar">
+        <div id="cadastro_concluido">
+          <span style="font-size: 35px;" id="fechar_cadastrar" onclick="fechar_cadastrar()">X</span>
+          <h1>Seu Cadastro foi concluido com sucesso</h1>
+
+          <p>
+            Agradecemos por cadastrar seu pet no Pet Feliz! Seu cadastro foi
+            concluído com sucesso e agora ele poderá fazer parte da nossa
+            comunidade de adoção. Esperamos que, juntos, possamos ajudar a
+            encontrar um novo lar cheio de carinho, cuidado e amor para cada
+            animal. Obrigado por fazer parte dessa missão! ❤️🐶🐱
+          </p>
+          <p>Clique em <a style="text-decoration: none;color:#2179dd;" href="pg_inicio.html">pagina inicial</a> para voltar à página inicial</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

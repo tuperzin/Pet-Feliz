@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inicio</title>
+    <link rel="icon" type="image/png" href="foto/logopet.png" />
+    <style>
+      body {
+        margin: 0;
+        background-color: white;
+        background-size: cover;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      header {
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+      }
+      header img {
+        height: 110px;
+      }
+
+      nav a {
+        color: #37474f;
+        font-weight: bold;
+        font-size: 38px;
+        text-decoration: none;
+      }
+      nav a:hover {
+        color: #0d47a1;
+        text-decoration: underline;
+        text-decoration-color: rgb(0, 140, 255);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 5px;
+      }
+      nav {
+        display: flex;
+        gap: 30px;
+      }
+      #busca {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #2196f3;
+      }
+      #titulo_busca {
+        color: white;
+        font-size: 15px;
+        margin-bottom: 35px;
+      }
+
+      .campo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .campo label {
+        font-size: 22px;
+        text-align: center;
+      }
+
+      .campo select {
+        font-size: 22px;
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #busca label {
+        color: white;
+      }
+      #busca button {
+        font-size: 22px;
+        cursor: pointer;
+        display: block;
+        margin-top: 12px;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 20px;
+
+        background-color: #1565c0;
+        color: white;
+
+        cursor: pointer;
+      }
+      #titulo_busca {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        background-color: #2196f3;
+        margin: 0;
+      }
+      #animais {
+        padding: 55px 8%;
+
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+      .foto {
+        height: 150px;
+        background-color: #b8d5ec;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 75px;
+      }
+      .pet {
+        width: 220px;
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        font-size: 22px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      .pet button {
+        margin-top: 12px;
+        border: none;
+        border-radius: 20px;
+        padding: 9px 18px;
+        font-size: 20px;
+        background-color: #1565c0;
+        color: white;
+        cursor: pointer;
+      }
+      .fundo_vermais {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+
+        justify-content: center;
+        align-items: center;
+      }
+
+      #caixa_vermais {
+        background: #c3daf5;
+        width: 675px;
+        height: 750px;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 20px;
+        font-family:  'Arial Narrow', Arial, sans-serif;
+      }
+
+      #fechar_vermais {
+        float: right;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      #imagem_pet{
+        height: 300px;
+        width: 400px;
+      }
+      .pet a {
+        text-decoration: none;
+        color: white;
+      }
+      .pet h3 {
+        color: #1565c0;
+        margin-bottom: 5px;
+      }
+      .pet p {
+        margin: 5px;
+        color: #4e7282;
+      }
+      #cadastro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #cadastro div {
+        background-color: #bad6ed;
+        width: 1000px;
+        border-radius: 18px;
+        height: 325px;
+      }
+      #agrupar_cadastro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      #agrupar_cadastro button {
+        border: none;
+        border-radius: 25px;
+        padding: 13px 25px;
+        font-size: 25px;
+        background-color: #1565c0;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      #agrupar_cadastro h1,
+      h3 {
+        color: #1f87db;
+      }
+    </style>
+  </head>
+
+  <script src="script_inicio.js"></script>
+
+  <body>
+    <header>
+      <h1><img src="foto/logopet.png" alt="Pet Feliz" /></h1>
+
+      <nav>
+        <a href="pg_inicio.html">Início</a>
+        <a href="adocao_login.html">Login</a>
+        <a href="quem_somos.html">Quem Somos</a>
+      </nav>
+    </header>
+    <main>
+      <div id="titulo_busca">
+        <h1>Ache seu novo pet</h1>
+      </div>
+      <section id="busca">
+        <div class="campo">
+          <label for="idd">selecione a idade</label>
+          <select id="idd">
+            <option>Filhote 0-1 Anos</option>
+            <option>Jovem 1-2 Anos</option>
+            <option>Adulto 2-7 Anos</option>
+            <option>Idoso 7-10+ Anos</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="espécie">selecione a espécie</label>
+          <select id="espécie">
+            <option>Gato</option>
+            <option>Cachorro</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="sex">selecione o sexo</label>
+          <select id="sex">
+            <option>Fêmea</option>
+            <option>Macho</option>
+          </select>
+        </div>
+        <button type="button">FILTRAR</button>
+      </section>
+      <section id="animais">
+        <div class="pet">
+          <div class="foto">🐱</div>
+          <h3>Flor</h3>
+          <p>gato - Fêmea</p>
+
+          <p>Filhote</p>
+
+          <button
+            onclick="ver_mais(
+            'FLor',
+            'gato - Fêmea',
+            'Filhote',
+            'pelagem branca',
+            'gosta de dormir de barriga para cima',
+            'foto/gato_filhote_branco_femea.jpg'
+        )"
+          >
+            Ver Mais
+          </button>
+        </div>
+      </section>
+      <div class="fundo_vermais">
+        <div id="caixa_vermais">
+          <span style="font-size: 35px;" id="fechar_vermais" onclick="fechar_ver_mais()">X</span>
+          <h2 id="nome"></h2>
+          <img id="imagem_pet" src=""   alt="foto do pet">
+          <p id="especie"></p>
+          <p id="idade"></p>
+          <p id="cor"></p>
+          <p id="descricao"></p>
+          <button>solicitar adoção</button>
+        </div>
+      </div>
+      <section id="cadastro">
+        <div id="agrupar_cadastro">
+          <h1>Seu Pet precisa de um lar?</h1>
+          <h3>Cadastre para a adoção!</h3>
+          <button>
+            <a style="text-decoration: none; color: white" href="cadastro.html"
+              >Cadastre aqui</a
+            >
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="script_inicio.js"></script>
+</html>
