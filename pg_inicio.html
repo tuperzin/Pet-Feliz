@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>inicio</title>
+    <title>Início</title>
     <link rel="icon" type="image/png" href="foto/logopet.png" />
     <style>
       body {
@@ -110,29 +110,24 @@
         height: 170px;
         background-color: #b8d5ec;
 
-
-
-        
         display: flex;
         align-items: center;
         justify-content: center;
-
-       
       }
       .foto img {
-    width: 100%;
-    max-height: 150px;
-    object-fit: contain;
-    border-radius: 10px;
-    margin-top: 6px;
-}
+        width: 100%;
+        max-height: 150px;
+        object-fit: contain;
+        border-radius: 10px;
+        margin-top: 6px;
+      }
       .pet {
         width: 220px;
         background-color: white;
         border-radius: 15px;
         overflow: hidden;
         font-size: 22px;
-        
+
         text-align: center;
         padding-bottom: 20px;
         box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.55);
@@ -161,28 +156,106 @@
       }
 
       #caixa_vermais {
-        background: rgb(46, 155, 245);
-        width: 675px;
-        height: 750px;
+        background: #5092f5;
+        width: 525px;
+        color: white;
+        font-weight: bold;
+        word-break: break-word;
+        height: fit-content;
         padding: 30px;
         border-radius: 15px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
         font-size: 20px;
-        font-family:  'Arial Narrow', Arial, sans-serif;
+        font-family: "Arial Narrow", Arial, sans-serif;
       }
-      #caixa_vermais img{
-      border-radius: 20px;
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.45);
+      #caixa_vermais h2 {
+        color: rgba(13, 71, 161, 1);
+      }
+      #caixa_vermais p {
+        margin: 8px;
+      }
+      #caixa_vermais span,
+      #adocao_solicitada span {
+        align-self: flex-end;
+        color: black;
+      }
+      #caixa_vermais img {
+        align-self: center;
+        border-radius: 20px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.45);
+      }
+      #caixa_vermais button {
+        border-radius: 15px;
+        background-color: rgba(13, 71, 161, 1);
+        color: white;
+        font-size: 20px;
+
+        width: auto;
+        height: 45px;
+        padding: 0 15px;
+        border: none;
+        cursor: pointer;
+        margin-top: auto;
+        align-self: center;
       }
 
       #fechar_vermais {
         float: right;
         font-size: 25px;
+        font-weight: bold;
         cursor: pointer;
       }
-      #imagem_pet{
+      #adocao_solicitada {
+        border-radius: 20px;
+        padding: 5px 25px;
+        height: fit-content;
+        height: 500px;
+        width: 600px;
+
+        overflow-wrap: break-word;
+        background-color: white;
+      }
+      #adocao_solicitada h2 {
+        color: rgba(13, 71, 161, 1);
+      }
+      #adocao_solicitada p {
+        margin: 8px;
+      }
+
+      #container_adocao_solicitada {
+        display: none;
+        font-size: 28px;
+        top: 0;
+        left: 0;
+        position: fixed;
+
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      #adocao_solicitada button {
+        border-radius: 15px;
+        background-color: rgba(13, 71, 161, 1);
+        color: white;
+        font-size: 24px;
+        display: block;
+        margin: 20px auto 0;
+        width: auto;
+        height: 55px;
+        padding: 0 15px;
+        border: none;
+        cursor: pointer;
+        margin-top: auto;
+      }
+
+      #imagem_pet {
         height: 300px;
-        width: 400px;
+        width: auto;
+        max-width: 400px;
       }
       .pet a {
         text-decoration: none;
@@ -218,6 +291,7 @@
       }
       #agrupar_cadastro button {
         border: none;
+
         border-radius: 25px;
         padding: 13px 25px;
         font-size: 25px;
@@ -242,7 +316,8 @@
       <nav>
         <a href="pg_inicio.html">Início</a>
         <a href="adocao_login.html">Login</a>
-        <a href="quem_somos.html">Quem Somos</a>
+        <a href="cadastro.html">Cadastrar animal</a>
+        <a href="como_usar.html">Como Usar?</a>
       </nav>
     </header>
     <main>
@@ -253,47 +328,473 @@
         <div class="campo">
           <label for="idd">selecione a idade</label>
           <select id="idd">
-            <option>Filhote 0-1 Anos</option>
-            <option>Jovem 1-2 Anos</option>
-            <option>Adulto 2-7 Anos</option>
-            <option>Idoso 7-10+ Anos</option>
+            <option value="Filhote 0-1 Anos">Filhote 0-1 Anos</option>
+            <option value="Jovem 1-2 Anos">Jovem 1-2 Anos</option>
+            <option value="Adulto 2-7 Anos">Adulto 2-7 Anos</option>
+            <option value="Idoso 7-10+ Anos">Idoso 7-10+ Anos</option>
           </select>
         </div>
         <div class="campo">
-          <label for="espécie">selecione a espécie</label>
-          <select id="espécie">
-            <option>Gato</option>
-            <option>Cachorro</option>
+          <label for="especie">selecione a espécie</label>
+          <select id="especie">
+            <option value="Gato">Gato</option>
+            <option value="Cachorro">Cachorro</option>
           </select>
         </div>
         <div class="campo">
           <label for="sex">selecione o sexo</label>
           <select id="sex">
-            <option>Fêmea</option>
-            <option>Macho</option>
+            <option value="Fêmea">Fêmea</option>
+            <option value="Macho">Macho</option>
           </select>
         </div>
-        <button type="button">FILTRAR</button>
+        <button onclick="selecionar()" type="button">FILTRAR</button>
+        <button onclick="mostrar_todos()">MOSTRAR TODOS</button>
       </section>
       <section id="animais">
-        <div class="pet">
-          <div class="foto">
-            <div><img src="foto/gato_filhote_branco_femea.jpg"></div>
-          </div>
-          <h3>Flor</h3>
-          <p>gato - Fêmea</p>
-
+        <!-- 1 FILHOTE / GATO / FÊMEA -->
+        <div
+          class="pet"
+          data-idade_pet="Filhote 0-1 Anos"
+          data-especie_pet="Gato"
+          data-sex_pet="Fêmea"
+        >
+          <div class="foto"><img src="foto/g1.png" /></div>
+          <h3>Luna</h3>
+          <p>Gato</p>
+          <p>Fêmea</p>
           <p>Filhote</p>
-
           <button
-            onclick="ver_mais(
-            'Flor',
-            'gato - Fêmea',
-            'Filhote',
-            'pelagem branca',
-            'gosta de dormir de barriga para cima',
-            'foto/gato_filhote_branco_femea.jpg'
-        )"
+            onclick="
+              ver_mais(
+                'Luna',
+                'Gato - Fêmea',
+                'Filhote',
+                'Pelagem branca',
+                'Carinhosa e brincalhona',
+                'foto/g1.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 2 FILHOTE / GATO / MACHO -->
+        <div
+          class="pet"
+          data-idade_pet="Filhote 0-1 Anos"
+          data-especie_pet="Gato"
+          data-sex_pet="Macho"
+        >
+          <div class="foto"><img src="foto/g2.png" /></div>
+          <h3>Thor</h3>
+          <p>Gato</p>
+          <p>Macho</p>
+          <p>Filhote</p>
+          <button
+            onclick="
+              ver_mais(
+                'Thor',
+                'Gato - Macho',
+                'Filhote',
+                'Pelagem cinza',
+                'Muito brincalhão',
+                'foto/g2.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 3 FILHOTE / CACHORRO / FÊMEA -->
+        <div
+          class="pet"
+          data-idade_pet="Filhote 0-1 Anos"
+          data-especie_pet="Cachorro"
+          data-sex_pet="Fêmea"
+        >
+          <div class="foto"><img src="foto/c1.png" /></div>
+          <h3>Mel</h3>
+          <p>Cachorro</p>
+          <p>Fêmea</p>
+          <p>Filhote</p>
+          <button
+            onclick="
+              ver_mais(
+                'Mel',
+                'Cachorro - Fêmea',
+                'Filhote',
+                'Pelagem caramelo',
+                'Dócil e carinhosa',
+                'foto/c1.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 4 FILHOTE / CACHORRO / MACHO -->
+        <div
+          class="pet"
+          data-idade_pet="Filhote 0-1 Anos"
+          data-especie_pet="Cachorro"
+          data-sex_pet="Macho"
+        >
+          <div class="foto"><img src="foto/c2.png" /></div>
+          <h3>Bob</h3>
+          <p>Cachorro</p>
+          <p>Macho</p>
+          <p>Filhote</p>
+          <button
+            onclick="
+              ver_mais(
+                'Bob',
+                'Cachorro - Macho',
+                'Filhote',
+                'Pelagem marrom',
+                'Adora brincar',
+                'foto/c2.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 5 JOVEM / GATO / FÊMEA -->
+        <div
+          class="pet"
+          data-idade_pet="Jovem 1-2 Anos"
+          data-especie_pet="Gato"
+          data-sex_pet="Fêmea"
+        >
+          <div class="foto"><img src="foto/g3.png" /></div>
+          <h3>Flor</h3>
+          <p>Gato</p>
+          <p>Fêmea</p>
+          <p>Jovem</p>
+          <button
+            onclick="
+              ver_mais(
+                'Flor',
+                'Gato - Fêmea',
+                'Jovem',
+                'Pelagem branca',
+                'Gosta de carinho',
+                'foto/g3.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 6 JOVEM / GATO / MACHO -->
+        <div
+          class="pet"
+          data-idade_pet="Jovem 1-2 Anos"
+          data-especie_pet="Gato"
+          data-sex_pet="Macho"
+        >
+          <div class="foto"><img src="foto/g4.png" /></div>
+          <h3>Simba</h3>
+          <p>Gato</p>
+          <p>Macho</p>
+          <p>Jovem</p>
+          <button
+            onclick="
+              ver_mais(
+                'Simba',
+                'Gato - Macho',
+                'Jovem',
+                'Pelagem laranja',
+                'Ativo e brincalhão',
+                'foto/g4.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 7 JOVEM / CACHORRO / FÊMEA -->
+        <div
+          class="pet"
+          data-idade_pet="Jovem 1-2 Anos"
+          data-especie_pet="Cachorro"
+          data-sex_pet="Fêmea"
+        >
+          <div class="foto"><img src="foto/c3.png" /></div>
+          <h3>Nina</h3>
+          <p>Cachorro</p>
+          <p>Fêmea</p>
+          <p>Jovem</p>
+          <button
+            onclick="
+              ver_mais(
+                'Nina',
+                'Cachorro - Fêmea',
+                'Jovem',
+                'Pelagem preta',
+                'Muito dócil',
+                'foto/c3.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 8 JOVEM / CACHORRO / MACHO -->
+        <div
+          class="pet"
+          data-idade_pet="Jovem 1-2 Anos"
+          data-especie_pet="Cachorro"
+          data-sex_pet="Macho"
+        >
+          <div class="foto"><img src="foto/c4.png" /></div>
+          <h3>Max</h3>
+          <p>Cachorro</p>
+          <p>Macho</p>
+          <p>Jovem</p>
+          <button
+            onclick="
+              ver_mais(
+                'Max',
+                'Cachorro - Macho',
+                'Jovem',
+                'Pelagem branca',
+                'Energético e amigável',
+                'foto/c4.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 9 ADULTO / GATO / FÊMEA -->
+        <div
+          class="pet"
+          data-idade_pet="Adulto 2-7 Anos"
+          data-especie_pet="Gato"
+          data-sex_pet="Fêmea"
+        >
+          <div class="foto"><img src="foto/g5.png" /></div>
+          <h3>Amora</h3>
+          <p>Gato</p>
+          <p>Fêmea</p>
+          <p>Adulto</p>
+          <button
+            onclick="
+              ver_mais(
+                'Amora',
+                'Gato - Fêmea',
+                'Adulto',
+                'Pelagem preta',
+                'Calma e carinhosa',
+                'foto/g5.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 10 ADULTO / GATO / MACHO -->
+        <div
+          class="pet"
+          data-idade_pet="Adulto 2-7 Anos"
+          data-especie_pet="Gato"
+          data-sex_pet="Macho"
+        >
+          <div class="foto"><img src="foto/g6.png" /></div>
+          <h3>Tom</h3>
+          <p>Gato</p>
+          <p>Macho</p>
+          <p>Adulto</p>
+          <button
+            onclick="
+              ver_mais(
+                'Tom',
+                'Gato - Macho',
+                'Adulto',
+                'Pelagem cinza',
+                'Tranquilo e independente',
+                'foto/g6.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 11 ADULTO / CACHORRO / FÊMEA -->
+        <div
+          class="pet"
+          data-idade_pet="Adulto 2-7 Anos"
+          data-especie_pet="Cachorro"
+          data-sex_pet="Fêmea"
+        >
+          <div class="foto"><img src="foto/c5.png" /></div>
+          <h3>Lola</h3>
+          <p>Cachorro</p>
+          <p>Fêmea</p>
+          <p>Adulto</p>
+          <button
+            onclick="
+              ver_mais(
+                'Lola',
+                'Cachorro - Fêmea',
+                'Adulto',
+                'Pelagem marrom',
+                'Dócil e tranquila',
+                'foto/c5.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 12 ADULTO / CACHORRO / MACHO -->
+        <div
+          class="pet"
+          data-idade_pet="Adulto 2-7 Anos"
+          data-especie_pet="Cachorro"
+          data-sex_pet="Macho"
+        >
+          <div class="foto"><img src="foto/c6.png" /></div>
+          <h3>Rex</h3>
+          <p>Cachorro</p>
+          <p>Macho</p>
+          <p>Adulto</p>
+          <button
+            onclick="
+              ver_mais(
+                'Rex',
+                'Cachorro - Macho',
+                'Adulto',
+                'Pelagem preta',
+                'Leal e companheiro',
+                'foto/c6.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 13 IDOSO / GATO / FÊMEA -->
+        <div
+          class="pet"
+          data-idade_pet="Idoso 7-10+ Anos"
+          data-especie_pet="Gato"
+          data-sex_pet="Fêmea"
+        >
+          <div class="foto"><img src="foto/g7.png" /></div>
+          <h3>Belinha</h3>
+          <p>Gato</p>
+          <p>Fêmea</p>
+          <p>Idoso</p>
+          <button
+            onclick="
+              ver_mais(
+                'Belinha',
+                'Gato - Fêmea',
+                'Idoso',
+                'Pelagem branca',
+                'Muito tranquila',
+                'foto/g7.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 14 IDOSO / GATO / MACHO -->
+        <div
+          class="pet"
+          data-idade_pet="Idoso 7-10+ Anos"
+          data-especie_pet="Gato"
+          data-sex_pet="Macho"
+        >
+          <div class="foto"><img src="foto/g8.png" /></div>
+          <h3>Oliver</h3>
+          <p>Gato</p>
+          <p>Macho</p>
+          <p>Idoso</p>
+          <button
+            onclick="
+              ver_mais(
+                'Oliver',
+                'Gato - Macho',
+                'Idoso',
+                'Pelagem cinza',
+                'Calmo e carinhoso',
+                'foto/g8.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 15 IDOSO / CACHORRO / FÊMEA -->
+        <div
+          class="pet"
+          data-idade_pet="Idoso 7-10+ Anos"
+          data-especie_pet="Cachorro"
+          data-sex_pet="Fêmea"
+        >
+          <div class="foto"><img src="foto/c7.png" /></div>
+          <h3>Meg</h3>
+          <p>Cachorro</p>
+          <p>Fêmea</p>
+          <p>Idoso</p>
+          <button
+            onclick="
+              ver_mais(
+                'Meg',
+                'Cachorro - Fêmea',
+                'Idoso',
+                'Pelagem caramelo',
+                'Calma e dócil',
+                'foto/c7.png',
+              )
+            "
+          >
+            Ver Mais
+          </button>
+        </div>
+
+        <!-- 16 IDOSO / CACHORRO / MACHO -->
+        <div
+          class="pet"
+          data-idade_pet="Idoso 7-10+ Anos"
+          data-especie_pet="Cachorro"
+          data-sex_pet="Macho"
+        >
+          <div class="foto"><img src="foto/c8.png" /></div>
+          <h3>Bruce</h3>
+          <p>Cachorro</p>
+          <p>Macho</p>
+          <p>Idoso</p>
+          <button
+            onclick="
+              ver_mais(
+                'Bruce',
+                'Cachorro - Macho',
+                'Idoso',
+                'Pelagem marrom',
+                'Muito tranquilo e companheiro',
+                'foto/c8.png',
+              )
+            "
           >
             Ver Mais
           </button>
@@ -301,16 +802,41 @@
       </section>
       <div class="fundo_vermais">
         <div id="caixa_vermais">
-          <span style="font-size: 35px;" id="fechar_vermais" onclick="fechar_ver_mais()">X</span>
+          <span
+            style="font-size: 35px"
+            id="fechar_vermais"
+            onclick="fechar_ver_mais()"
+            >X</span
+          >
           <h2 id="nome"></h2>
-          <img id="imagem_pet" src=""   alt="foto do pet">
-          <p id="especie"></p>
-          <p id="idade"></p>
+          <img id="imagem_pet" src="" alt="foto do pet" />
+          <p id="especie_vermais"></p>
+          <p id="idade_vermais"></p>
           <p id="cor"></p>
           <p id="descricao"></p>
-          <button>solicitar adoção</button>
+
+          <button onclick="adocao_solicitada()">SOLICITAR ADOÇÃO</button>
         </div>
       </div>
+      <div id="container_adocao_solicitada">
+        <div id="adocao_solicitada">
+          <span
+            style="font-size: 35px"
+            id="fechar_vermais"
+            onclick="fechar_adocao_solicitada()"
+            >X</span
+          >
+          <h2>Sua solicitação de adoção foi realizada com sucesso!</h2>
+          <p>
+            Você está dando um passo muito importante para proporcionar a um
+            animal um novo lar, cheio de carinho, amor e companheirismo. Cada
+            adoção representa uma nova oportunidade para um animal ter uma vida
+            mais feliz e receber todo o cuidado que merece.
+          </p>
+          <button onclick="fechar_adocao_solicitada()">FECHAR</button>
+        </div>
+      </div>
+
       <section id="cadastro">
         <div id="agrupar_cadastro">
           <h1>Seu Pet precisa de um lar?</h1>

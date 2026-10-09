@@ -11,7 +11,7 @@
         background-color: rgb(255, 255, 255);
         justify-content: space-between;
         padding: 20px;
-        margin-bottom: 50px;
+        margin-bottom: 200px;
         align-items: center;
       }
       header img {
@@ -57,7 +57,9 @@
         border-radius: 28px;
         box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.35);
         width: 100%;
-        max-width: 800px;
+        height: fit-content;
+        max-width: 900px;
+        margin-bottom: 75px;
       }
       h1 {
         text-align: center;
@@ -172,7 +174,7 @@
         align-items: center;
         background: rgba(0, 0, 0, 0.5);
       }
-#fechar_cadastrar{
+      #fechar_cadastrar {
         float: right;
         font-size: 25px;
         cursor: pointer;
@@ -180,7 +182,7 @@
       #cadastro_concluido {
         border-radius: 20px;
         padding: 5px 25px;
-        height:fit-content;
+        height: fit-content;
         width: 700px;
         background-color: white;
       }
@@ -193,8 +195,9 @@
 
     <nav>
       <a href="pg_inicio.html">Início</a>
-      <a href="cadastro.html">cadastrar animal</a>
-      <a href="adocao_login.html">login</a>
+      <a href="adocao_login.html">Login</a>
+      <a href="cadastro.html">Cadastrar animal</a>
+      <a href="como_usar.html">Como Usar?</a>
     </nav>
   </header>
   <body>
@@ -205,11 +208,11 @@
           <div class="perguntapet">
             <h2>Perguntas sobre o pet</h2>
             <div class="nomepet">
-              <label for="nomepet">Nome do Pet</label>
+              <label for="nomepet">Nome do pet</label>
               <input type="text" />
             </div>
             <div class="nomepet">
-              <label for="idadepet">Idade Do Pet</label>
+              <label for="idadepet">Idade do pet</label>
               <section>
                 <select
                   style="
@@ -227,6 +230,21 @@
             </div>
             <div class="nomepet">
               <label for="Raça">Raça do pet</label>
+              <section>
+                <select
+                  style="
+                    font-size: 15px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                  "
+                >
+                  <option>Fêmea</option>
+                  <option>Macho</option>
+                </select>
+              </section>
+            </div>
+            <div class="nomepet">
+              <label for="Raça">Sexo do pet</label>
               <section>
                 <select
                   style="
@@ -256,9 +274,9 @@
             </div>
           </div>
           <div class="pergunta-humano">
-            <h2>Perguntas sobre o dono</h2>
+            <h2>Perguntas sobre o cadastrante</h2>
             <div class="nomepet">
-              <label for="nomedono">Nome do dono</label>
+              <label for="nomedono">Nome </label>
               <input type="text" />
             </div>
             <div class="nomepet">
@@ -271,7 +289,23 @@
               <input type="text" />
             </div>
             <div class="nomepet">
-              <label for="Estado">você é o reponsável pelo animal?</label>
+              <label for="Estado">Você é o reponsável pelo animal?</label>
+
+              <select
+                style="
+                  font-size: 15px;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-weight: bold;
+                "
+              >
+                <option>Sim</option>
+                <option>Não</option>
+              </select>
+            </div>
+            <div class="nomepet">
+              <label for="Estado"
+                >Há quanto tempo você conhece ou acompanha o animal?</label
+              >
 
               <input type="text" />
             </div>
@@ -298,7 +332,12 @@
       </div>
       <div id="container_cadastrar">
         <div id="cadastro_concluido">
-          <span style="font-size: 35px;" id="fechar_cadastrar" onclick="fechar_cadastrar()">X</span>
+          <span
+            style="font-size: 35px"
+            id="fechar_cadastrar"
+            onclick="fechar_cadastrar()"
+            >X</span
+          >
           <h1>Seu Cadastro foi concluido com sucesso</h1>
 
           <p>
@@ -306,9 +345,17 @@
             concluído com sucesso e agora ele poderá fazer parte da nossa
             comunidade de adoção. Esperamos que, juntos, possamos ajudar a
             encontrar um novo lar cheio de carinho, cuidado e amor para cada
-            animal. Obrigado por fazer parte dessa missão! ❤️🐶🐱
+            animal.
           </p>
-          <p>Clique em <a style="text-decoration: none;color:#2179dd;" href="pg_inicio.html">pagina inicial</a> para voltar à página inicial ou no "X" no canto superior esquerdo.</p>
+          <p>
+            Clique em
+            <a
+              style="text-decoration: none; color: #2179dd"
+              href="pg_inicio.html"
+              >Início</a
+            >
+            para voltar à página inicial.
+          </p>
         </div>
       </div>
     </main>
