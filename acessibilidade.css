@@ -1,0 +1,145 @@
+/* ===== Painel de acessibilidade ===== */
+#painel-acessibilidade {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 2px solid #1565c0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#painel-acessibilidade p {
+  margin: 0;
+  font-weight: bold;
+  color: #1565c0;
+  text-align: center;
+}
+
+#painel-acessibilidade button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1565c0;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ===== Alto contraste: preto, branco e tons de cinza =====
+   Os cinzas (--cinza-1 a --cinza-4) separam visualmente as seções.
+   Regra geral: nenhum elemento tem fundo próprio (transparent), e cada
+   seção recebe o seu tom. Assim não aparecem caixas pretas dentro de
+   botões nem blocos pretos sem diferença entre si. */
+body.alto-contraste {
+  --cinza-1: #1a1a1a; /* cabeçalho e área principal */
+  --cinza-2: #262626; /* seções: busca, cadastro, container, janelas */
+  --cinza-3: #333333; /* cartões e blocos */
+  --cinza-4: #4d4d4d; /* faixas de título e áreas de foto */
+}
+
+body.alto-contraste,
+body.alto-contraste * {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body.alto-contraste {
+  background-color: #000000 !important;
+}
+
+/* links: amarelos e sublinhados, para se diferenciar do texto */
+body.alto-contraste a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+/* botões: amarelos com texto preto (um só fundo, sem caixas dentro) */
+body.alto-contraste button {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* conteúdo dentro de um botão (ex.: link "Cadastre aqui") segue o botão */
+body.alto-contraste button * {
+  background-color: transparent !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+/* campos de formulário: brancos, com texto preto para leitura */
+body.alto-contraste input,
+body.alto-contraste select,
+body.alto-contraste textarea {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* ----- seções da página em tons de cinza ----- */
+body.alto-contraste header,
+body.alto-contraste main,
+body.alto-contraste #cadastro {
+  background-color: var(--cinza-1) !important;
+}
+
+body.alto-contraste #titulo_busca {
+  background-color: var(--cinza-4) !important;
+}
+
+body.alto-contraste #busca,
+body.alto-contraste .container,
+body.alto-contraste .login {
+  background-color: var(--cinza-2) !important;
+}
+
+body.alto-contraste .pet,
+body.alto-contraste #cadastro > div,
+body.alto-contraste .sobre-nos {
+  background-color: var(--cinza-3) !important;
+}
+
+body.alto-contraste .foto,
+body.alto-contraste .imagem-container {
+  background-color: var(--cinza-4) !important;
+}
+
+/* janelas (popups) e fundo escurecido */
+body.alto-contraste .fundo_vermais,
+body.alto-contraste #container_adocao_solicitada,
+body.alto-contraste #container_cadastrar {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+body.alto-contraste #caixa_vermais,
+body.alto-contraste #adocao_solicitada,
+body.alto-contraste #cadastro_concluido {
+  background-color: var(--cinza-2) !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* painel de acessibilidade: cinza escuro com botões amarelos */
+body.alto-contraste #painel-acessibilidade {
+  background-color: var(--cinza-2) !important;
+  border: 2px solid #ffffff !important;
+}
+
+
+/* ===== Fonte ampliada: deixa as caixas crescerem com o texto ===== */
+/* Alturas fixas em px cortam o texto quando a fonte aumenta.
+   Quando a fonte está ampliada, as alturas viram automáticas.
+   Imagens e as janelas de sobreposição ficam como estavam. */
+body.fonte-ampliada *:not(img):not(.fundo_vermais):not(#container_adocao_solicitada):not(#container_cadastrar):not(#painel-acessibilidade) {
+  height: auto !important;
+  max-height: none !important;
+}
